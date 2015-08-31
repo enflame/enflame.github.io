@@ -7,6 +7,6 @@ NYC on Rails
 
 This repository serves two primary purposes:
 
-1. Talks are proposed via Git pull requests; just add your talk to <a href="index.html">index.html</a>. Anybody who proposes a talk gets early priority access to tickets for that month regardless of whether the talk is accepted.
+1. Talks are proposed via Github issues; just open up an issue [here](https://github.com/nycrails/nycrails.github.io/issues/new). Anybody who proposes a talk gets early priority access to tickets for that month regardless of whether the talk is accepted.
 
 Hope to see you next time!
