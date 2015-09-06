@@ -1,1 +1,303 @@
-<h1>NYC on Rails</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>NYC on Rails | The world's best web framework, in New York's most iconic boroughough</title>
+    <meta name="description" content="NYC on Rails | a Ruby/Rails meetup for New York's most iconic borough">
+    <meta name="viewport" content="width=device-width">
+    <style>
+      body {
+        padding: 0;
+        background: #222;
+        color: #fff;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 125%;
+        letter-spacing: .015em;
+      }
+
+      footer {
+        text-align: center;
+        font-size: .7em;
+        width: 500px;
+        margin: 50px auto;
+      }
+
+      header {
+        width: 625px;
+        margin: 20px auto;
+        background: #222;
+        font-weight: bold;
+        font-size: 72px;
+        text-align: left;
+        border-top: 4px solid #fff;
+        line-height: 68px;
+        position: relative;
+      }
+
+      header span {
+        position: absolute;
+        top: 7px;
+        height: 72px;
+        width: 72px;
+        border-radius: 50%;
+        line-height: 72px;
+        font-size: 60px;
+        text-align: center;
+        background: #EE352E;
+        color: white;
+      }
+
+      header .r {
+        margin-left: 10px;
+      }
+
+      header .b {
+        margin-left: 90px;
+      }
+
+      article {
+        width: 500px;
+        margin: 20px auto;
+      }
+
+      article p {
+        border: 1px solid #fff;
+        margin: 60px 0;
+        font-weight: bold;
+        padding: 20px;
+        text-align: center;
+      }
+
+      ol {
+        list-style-type: none;
+        list-style-position: inside;
+        text-align: left;
+        margin: 0 auto;
+        padding: 0 0 0 90px;
+      }
+
+      time {
+        color: #999;
+        position: absolute;
+        font-size: 16px;
+        left: -125px;
+        top: 20px;
+        width: 100px;
+        text-align: right;
+      }
+
+      .stop {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .stop:before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        background-color: #222;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        display: block;
+        left: -9px;
+        top: 22px;
+      }
+
+      .end.stop:before {
+        background-color: #fff;
+      }
+
+      .walk {
+        border-left: 8px dotted #666;
+        margin: -12px 0 -25px -4px;
+        padding: 30px 0 40px 26px;
+      }
+
+      .ride {
+        border-left: 8px solid #EE352E;
+        margin: -17px 0 -25px -4px;
+        height: 60px;
+      }
+
+      .speaker {
+        position: relative;
+        padding-left: 30px;
+      }
+
+      .speaker:before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        background-color: #EE352E;
+        display: block;
+        left: 2px;
+        top: 25px;
+      }
+
+      small {
+        font-size: 16px;
+        color: #999;
+        display: block;
+      }
+
+      a {
+        color: #ddd;
+        text-decoration: none;
+        border-bottom: 1px dotted;
+      }
+    </style>
+    <script>
+      var then = new Date(2015, 8, 30)
+
+      var days = 'Sunday Monday Tuesday Wednesday Thursday Friday Saturday'.split(' ')
+      var months = 'January February March April May June July August September October November December'.split(' ')
+
+      function suffixed(number) {
+        if (number > 9 && number < 21)
+          return number + "th"
+        var lastDigit = number % 10
+        switch (lastDigit) {
+         case 1: return number + "st"
+         case 2: return number + "nd"
+         case 3: return number + "rd"
+        default: return number + "th"
+        }
+      }
+
+      function longEventDate() {
+        var weekday = days[then.getDay()]
+        var month = months[then.getMonth()]
+        var date = month + " " + suffixed(then.getDate())
+        document.write([weekday, date, "at 7pm"].join(", "))
+      }
+
+      function shortEventDate() {
+        document.write((then.getMonth()+1) + "/" + then.getDate())
+      }
+
+      function timeLeft() {
+        var now = new Date
+        var n = 0 | (then - now) / 86400000
+
+        document.write(
+          n >  1 ? n + " days" :
+          n == 1 ? "1 day"     :
+          n == 0 ? "A while"   : ""
+        )
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      NYC on Rails   
+      <span class="r">R</span>
+      <span class="b">B</span>
+    </header>
+
+    <article>
+      <p>
+        PLANNED DISRUPTION<br>
+        <script>longEventDate()</script><br><br>
+        Please follow the directions below.
+      </p>
+      <ol>
+        <li class="end stop">
+          <time>now</time>
+          <small>See the event board to</small>
+          <div><a href="https://ti.to/BrooklynJS/brooklynjs-23">Get your ticket</a> and <a href="https://ti.to/BrooklynJS/brooklynjs-23">tell your friends</a></div>
+        </li>
+        <li class="ride"></li>
+        <li class="stop">
+          <time>
+            <script>timeLeft()</script>
+          </time>
+          <small>Nothing to do but</small>
+          <div>Wait patiently</div>
+        </li>
+        <li class="ride"></li>
+        <li class="end stop">
+          <time><script>shortEventDate()</script></time>
+          <small>Make your way to our awesome venue,</small>
+          <div><a href="http://flatironschool.com">The Flatiron School</a> on <a href="https://www.google.com/maps?q=11+Broadway+10004">Broadway.</a></div>
+        </li>
+        <li class="walk">
+        </li>
+        <li class="stop">
+          <small>Check in at the front desk and</small>
+          <div>take the elevator to the second floor</div>
+        </li>
+        <li class="ride"></li>
+        <li class="end stop">
+          <time>7:20p</time>
+          <small>Grab a seat in time for</small>
+          <div>Introduction and kickoff</div>
+        </li>
+        <li class="ride"></li>
+        <li class="speaker">
+          <time>7:30p</time>
+          <!--
+            To add yourself to this slot, change the following two lines
+            and add a short description paragraph in the pull request.
+          -->
+          <small>Listen to our first speaker, or better yet</small>
+          <div><a href="https://github.com/nycrails/nycrails.github.io/issues/new">BE OUR FIRST SPEAKER</a></div>
+        </li>
+        <li class="ride"></li>
+        <li class="speaker">
+          <time>7:40p</time>
+          <!--
+            To add yourself to this slot, change the following two lines
+            and add a short description paragraph in the pull request.
+          -->
+          <small>Listen to our second speaker, or better yet</small>
+          <div><a href="https://github.com/nycrails/nycrails.github.io/issues/new">BE OUR SECOND SPEAKER</a></div>
+        </li>
+        <li class="ride"></li>
+        <li class="speaker">
+          <time>7:50p</time>
+          <!--
+            To add yourself to this slot, change the following two lines
+            and add a short description paragraph in the pull request.
+          -->
+          <small>Listen to our third speaker, or better yet</small>
+          <div><a href="https://github.com/nycrails/nycrails.github.io/issues/new">BE OUR THIRD SPEAKER</a></div>
+        </li>
+        <li class="ride"></li>
+        <li class="speaker">
+          <time>8:00p</time>
+          <!--
+            To add yourself to this slot, change the following two lines
+            and add a short description paragraph in the pull request.
+          -->
+          <small>Listen to our fourth speaker, or better yet</small>
+          <div><a href="https://github.com/nycrails/nycrails.github.io/issues/new">BE OUR FOURTH SPEAKER</a></div>
+        </li>
+        <li class="ride"></li>
+        <li class="speaker">
+          <time>8:10p</time>
+          <!--
+            To add yourself to this slot, change the following two lines
+            and add a short description paragraph in the pull request.
+          -->
+          <small>Listen to our fifth speaker, or better yet</small>
+          <div><a href="https://github.com/nycrails/nycrails.github.io/issues/new">BE OUR FIFTH SPEAKER</a></div>
+        </li>
+        <li class="ride"></li>
+        <li class="end stop">
+          <time>8:20p</time>
+          <small>Wind down with the</small>
+          <div>Wrap-up</div>
+        </li>
+      </ol>
+    </article>
+    <footer>
+      Special thanks to <a href="http://brooklynjs.com">BrooklynJS</a> for allowing us to copy from their awesome site.
+      <hr>
+      NYC on Rails expects all speakers and attendees<br>to follow the <a href="http://jsconf.com/codeofconduct.html">JSConf code of conduct</a>.
+    </footer>
+  </body>
+</html>
